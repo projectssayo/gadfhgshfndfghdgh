@@ -1,0 +1,68 @@
+/* Mobile-first styles */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  background:#0f172a;color:#e2e8f0;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.top{
+  position:sticky;top:0;z-index:10;
+  background:rgba(15,23,42,.94);backdrop-filter:blur(8px);
+  padding:calc(10px + env(safe-area-inset-top)) 14px 8px;
+  border-bottom:1px solid #1e293b;
+}
+.top h1{margin:0;font-size:1.1rem}
+.top p{margin:2px 0 8px;font-size:.8rem;color:#94a3b8}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{
+  flex:0 0 auto;border:1px solid #334155;background:#1e293b;color:#e2e8f0;
+  padding:7px 12px;border-radius:999px;font-size:.8rem;cursor:pointer;
+}
+.chips button:active{background:#334155}
+
+.gallery{display:flex;flex-direction:column;gap:14px;padding:14px 10px 10px;max-width:760px;margin:0 auto}
+.card{background:#1e293b;border-radius:12px;overflow:hidden;scroll-margin-top:110px}
+.card header{display:flex;justify-content:space-between;padding:8px 12px;font-size:.78rem;color:#94a3b8}
+.card header b{color:#e2e8f0}
+.card button.pg{display:block;width:100%;padding:0;border:0;background:#fff;cursor:zoom-in}
+.card img{display:block;width:100%;height:auto}
+.foot{text-align:center;font-size:.78rem;color:#64748b;padding:8px 16px 28px}
+
+/* Viewer */
+.viewer{position:fixed;inset:0;z-index:100;background:#000;display:flex;flex-direction:column}
+.viewer[hidden]{display:none}
+.viewer-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:calc(8px + env(safe-area-inset-top)) 10px 8px;
+  background:rgba(15,23,42,.95);z-index:2;
+}
+.viewer-bar button{
+  min-width:44px;height:44px;border:0;border-radius:10px;
+  background:#1e293b;color:#fff;font-size:1.1rem;cursor:pointer;
+}
+.viewer-bar button:active{background:#334155}
+.viewer-zoom{display:flex;gap:6px}
+#vCount{font-size:.85rem;color:#cbd5e1;text-align:center}
+.stage{
+  flex:1;position:relative;overflow:hidden;
+  touch-action:none;  /* pinch/pan handled in JS */
+  background:#111;
+}
+.stage img{
+  position:absolute;background:#fff;user-select:none;-webkit-user-select:none;
+  transform-origin:center center;will-change:transform;max-width:none;
+}
+.nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:44px;height:64px;border:0;background:rgba(15,23,42,.6);color:#fff;
+  font-size:1.3rem;cursor:pointer;
+}
+.nav.prev{left:0;border-radius:0 10px 10px 0}
+.nav.next{right:0;border-radius:10px 0 0 10px}
+.nav[disabled]{opacity:.25}
+
+@media (min-width:700px){
+  .top h1{font-size:1.3rem}
+}

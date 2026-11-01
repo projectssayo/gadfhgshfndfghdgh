@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <title>Practical Manual – Pages 19–32</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="top">
+    <h1>Practical Manual</h1>
+    <p>Pages 19–32 &middot; Practicals 5–10</p>
+    <nav class="chips" id="chips" aria-label="Jump to practical"></nav>
+  </header>
+
+  <main id="gallery" class="gallery" aria-label="Manual pages"></main>
+
+  <footer class="foot">Tap a page to open it. Pinch, double-tap or scroll to zoom.</footer>
+
+  <!-- Full-screen zoom viewer -->
+  <div id="viewer" class="viewer" hidden aria-modal="true" role="dialog">
+    <div class="viewer-bar">
+      <button id="vClose" aria-label="Close">&#10005;</button>
+      <span id="vCount">1 / 14</span>
+      <div class="viewer-zoom">
+        <button id="vOut" aria-label="Zoom out">&minus;</button>
+        <button id="vReset" aria-label="Reset zoom">Fit</button>
+        <button id="vIn" aria-label="Zoom in">+</button>
+      </div>
+    </div>
+    <div id="stage" class="stage">
+      <img id="vImg" alt="" draggable="false">
+    </div>
+    <button id="vPrev" class="nav prev" aria-label="Previous page">&#10094;</button>
+    <button id="vNext" class="nav next" aria-label="Next page">&#10095;</button>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
